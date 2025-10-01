@@ -14,10 +14,11 @@ if [ -z "$(ls -A $APP_DIR)" ]; then
     fi
 
     # Crear proyecto Laravel en el directorio de trabajo
-    laravel new $APP_DIR
+    #laravel new $APP_DIR
+    laravel new laravel
 
     # Generar la key de aplicación
-    php $APP_DIR/artisan key:generate
+    php $APP_DIR/laravel/artisan key:generate
 
 else
     echo "✅ Proyecto Laravel existente detectado. Usándolo..."
