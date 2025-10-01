@@ -6,6 +6,13 @@ services:
     working_dir: /var/www/html
     volumes:
       - ./backend/src:/var/www/html
+    environment:
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: db_laravel
+      DB_USERNAME: dba
+      DB_PASSWORD: sys
     depends_on:
       - db
 
