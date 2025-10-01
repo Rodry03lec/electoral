@@ -6,7 +6,9 @@ APP_DIR="/var/www/html"
 #Si la carpeta está vacía (sin Laravel), inicializamos un nuevo proyecto
 if [ -z "$(ls -A $APP_DIR)" ]; then
     echo "No se encontró un proyecto Laravel. Creando uno nuevo..."
-    composer create-project --prefer-dist laravel/laravel . 
+    #composer create-project --prefer-dist laravel/laravel . 
+    composer global require laravel/installer
+    exec php-fpm
 else
     echo "Proyecto Laravel existente detectado. Usándolo..."
 fi
