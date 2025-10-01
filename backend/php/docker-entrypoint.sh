@@ -5,7 +5,7 @@ APP_DIR="/var/www/html"
 
 # Detectar si la carpeta está vacía
 if [ -z "$(ls -A $APP_DIR)" ]; then
-    echo "📂 No se encontró un proyecto Laravel. Creando uno nuevo..."
+    echo "No se encontró un proyecto Laravel. Creando uno nuevo..."
     
     # Instalar Laravel global si no existe
     if ! command -v laravel >/dev/null 2>&1; then
@@ -14,14 +14,15 @@ if [ -z "$(ls -A $APP_DIR)" ]; then
     fi
 
     # Crear proyecto Laravel en el directorio de trabajo
-    #laravel new $APP_DIR
-    laravel new laravel
+    #laravel new laravel
+    laravel new .
 
     # Generar la key de aplicación
-    php $APP_DIR/laravel/artisan key:generate
+    #php $APP_DIR/laravel/artisan key:generate
+    php artisan key:generate
 
 else
-    echo "✅ Proyecto Laravel existente detectado. Usándolo..."
+    echo "Proyecto Laravel existente detectado. Usándolo..."
 fi
 
 # Asignar permisos necesarios
@@ -35,7 +36,7 @@ fi
 
 # Volver a enlazar storage si hace falta
 if [ ! -L "$APP_DIR/public/storage" ]; then
-    echo "🔗 Creando enlace simbólico storage..."
+    echo "Creando enlace simbólico storage..."
     php $APP_DIR/artisan storage:link || true
 fi
 
@@ -45,7 +46,7 @@ chown -R www-data:www-data $APP_DIR/public
 
 # Ejecutar migraciones automáticas si existe `.env`
 if [ -f "$APP_DIR/.env" ]; then
-    echo "🛠 Ejecutando migraciones..."
+    echo "Ejecutando migraciones..."
     php $APP_DIR/artisan migrate --force || true
 fi
 
