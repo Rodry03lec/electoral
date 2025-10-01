@@ -11,7 +11,7 @@ services:
 
   nginx:
     image: nginx:latest
-    container_name: farmacia_nginx
+    container_name: laravel_nginx
     ports:
       - "80:80"
     volumes:
