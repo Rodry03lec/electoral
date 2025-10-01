@@ -48,7 +48,9 @@ if [ -z "$(ls -A $APP_DIR)" ]; then
     # Generar la key de aplicación
     #php $APP_DIR/laravel/artisan key:generate
     #php artisan key:generate
-
+    composer create-project --prefer-dist laravel/laravel .
+    php artisan key:generate
+    setup_laravel
 else
     echo "Proyecto Laravel existente detectado. Usándolo..."
     setup_laravel
