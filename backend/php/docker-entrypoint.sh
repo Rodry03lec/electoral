@@ -15,7 +15,7 @@ fi
 chown -R www-data:www-data $APP_DIR/storage $APP_DIR/bootstrap/cache
 chmod -R 775 $APP_DIR/storage $APP_DIR/bootstrap/cache
 
-#composer install
+composer install
 # Limpiar y volver a enlazar el storage
 
 #rm -rf $APP_DIR/public/storage
