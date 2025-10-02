@@ -1,4 +1,4 @@
-> Iniciando proyectos desde cero desarrollo ....
+# Iniciando proyectos desde cero desarrollo
 > cuando es un nuevo proyecto desde cero crear dos carpetas src en backend y fronend
 ```
 mkdir backend/src
@@ -10,4 +10,8 @@ docker compose up --build
 docker compose ps
 docker compose start
 docker compose stop
+```
+>para desarrollo dar permisos
+```
+sudo chown -R $USER:$USER frontend/src backend/src/   
 ```
