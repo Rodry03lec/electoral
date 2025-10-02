@@ -31,8 +31,7 @@ setup_laravel()
     fi
 }
 # Detectar si la carpeta está vacía
-#if [ -z "$(ls -A $APP_DIR)" ]; then
-if [ "$(ls -A $APP_DIR | grep -v '.gitkeep')" == "" ]; then
+if [ -z "$(ls -A $APP_DIR)" ]; then
     echo "No se encontró un proyecto Laravel. Creando uno nuevo..."
     
     # Instalar Laravel global si no existe
