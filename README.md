@@ -1,6 +1,7 @@
 # DESARROLLO LARAVEL Y ANGULAR
 >luego ejecuta el siguiente comando
 ```
+docker compose up --build
 docker compose up --build -d
 docker compose ps
 docker compose start
