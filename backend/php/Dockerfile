@@ -14,4 +14,5 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 # Comando por defecto
+EXPOSE 8000
 ENTRYPOINT ["docker-entrypoint.sh"]

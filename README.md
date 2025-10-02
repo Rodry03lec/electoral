@@ -1,4 +1,4 @@
-# Iniciando proyectos desde cero desarrollo
+# DESARROLLO LARAVEL Y ANGULAR
 > cuando es un nuevo proyecto desde cero crear dos carpetas src en backend y fronend
 ```
 mkdir backend/src
