@@ -13,5 +13,19 @@ docker compose stop
 ```
 >para desarrollo dar permisos
 ```
-sudo chown -R $USER:$USER frontend/src backend/src/   
+sudo chown -R $USER:$USER frontend/src backend/src/storage/ backend/src/app/ backend/src/resources
+```
+>Para interaccion con el contenedor
+```
+docker exec -it frontend_app bash 
+docker exec -it backend_app bash 
+```
+>comandos necesarios
+```
+ng g environments
+```
+>Para ver los logs
+```
+docker logs -f frontend_app
+docker logs -f backend_app
 ```
