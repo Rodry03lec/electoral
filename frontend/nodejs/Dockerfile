@@ -1,12 +1,17 @@
 FROM node:20
 
+# Instalar Angular CLI
 RUN npm install -g @angular/cli
+
 WORKDIR /app
+
+# Copiar package.json para instalar dependencias
 COPY package*.json ./
-#RUN npm install
-EXPOSE 4200
-#CMD ["ng", "serve", "--host", "0.0.0.0"]
+
+# Volúmenes y entrypoint
 COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-# Comando por defecto
+
+EXPOSE 4200
+
 ENTRYPOINT ["docker-entrypoint.sh"]
