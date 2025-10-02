@@ -35,11 +35,11 @@ if [ -z "$(ls -A $APP_DIR)" ]; then
     echo "No se encontró un proyecto Laravel. Creando uno nuevo..."
     
     # Instalar Laravel global si no existe
-    if ! command -v laravel >/dev/null 2>&1; then
-        composer global require laravel/installer
-        #export PATH="$HOME/.composer/vendor/bin:$PATH"
-        ln -s /root/.composer/vendor/bin/laravel /usr/local/bin/laravel
-    fi
+    #if ! command -v laravel >/dev/null 2>&1; then
+    #    composer global require laravel/installer
+    #    #export PATH="$HOME/.composer/vendor/bin:$PATH"
+    #    ln -s /root/.composer/vendor/bin/laravel /usr/local/bin/laravel
+    #fi
 
     # Crear proyecto Laravel en el directorio de trabajo
     #laravel new laravel
