@@ -6,13 +6,14 @@ RUN apt-get update && \
     apt-get install -y nodejs && \
     npm install -g pm2 web-push && \
     docker-php-ext-install pdo pdo_pgsql gmp bcmath
-# Establecer directorio de trabajo
-WORKDIR /var/www/html
+
 # Copiar Composer desde la imagen oficial
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-# Copiar entrypoint
-COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-# Comando por defecto
+# Instalar Laravel Installer globalmente
+RUN composer global require laravel/installer && \
+    ln -s /root/.composer/vendor/bin/laravel /usr/local/bin/laravel
+# Establecer directorio de trabajo
+WORKDIR /var/www/html
 EXPOSE 8000
-ENTRYPOINT ["docker-entrypoint.sh"]
+# Mantener el contenedor vivo para desarrollo
+CMD ["tail", "-f", "/dev/null"]
