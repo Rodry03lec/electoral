@@ -1,27 +1,27 @@
 services:
-  app_backend:
+  app_laravel:
     build:
-      context: ./backend/php
-    container_name: backend_app
+      context: ./backend
+    container_name: laravel_app
     working_dir: /var/www/html
     volumes:
-      - ./backend/src:/var/www/html
+      - ./backend/laravel:/var/www/html
     ports:
       - "8000:8000"
     depends_on:
       - db
   app_frontend:
     build:
-      context: ./frontend/nodejs
+      context: ./frontend
       dockerfile: Dockerfile
-    container_name: frontend_app
+    container_name: angular_app
     working_dir: /app
     volumes:
-      - ./frontend/src:/app
+      - ./frontend/angular:/app
     ports:
       - "4200:4200"
     depends_on:
-      - app_backend
+      - app_laravel
     command: tail -f /dev/null
 #    command: sleep infinity
   db:
