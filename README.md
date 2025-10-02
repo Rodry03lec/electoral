@@ -1,24 +1,27 @@
 # DESARROLLO LARAVEL Y ANGULAR
-> cuando es un nuevo proyecto desde cero crear dos carpetas src en backend y fronend
-```
-mkdir backend/src
-mkdir frontend/src
-```
 >luego ejecuta el siguiente comando
 ```
-docker compose up --build
+docker compose up --build -d
 docker compose ps
 docker compose start
 docker compose stop
 ```
+> Para crear proyectos entre por shell
+```
+docker exec -it laravel_app bash 
+docker exec -it angular_app bash 
+```
+>creacion de proyectos
+```
+ng new hola_mundo
+laravel new hola-mundo
+
+ng s --host 0.0.0.0
+php artisan serve --host 0.0.0.0
+```
 >para desarrollo dar permisos
 ```
-sudo chown -R $USER:$USER frontend/src backend/src/storage/ backend/src/app/ backend/src/resources
-```
->Para interaccion con el contenedor
-```
-docker exec -it frontend_app bash 
-docker exec -it backend_app bash 
+sudo chown -R $USER:$USER frontend/angular backend/laravel
 ```
 >comandos necesarios
 ```
