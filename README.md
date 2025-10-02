@@ -1,13 +1,13 @@
-> Iniciando ....
-> cuando es un nuevo proyecto desde cero comentar esta line en dockerfile de laravel
+> Iniciando proyectos desde cero desarrollo ....
+> cuando es un nuevo proyecto desde cero crear dos carpetas src en backend y fronend
 ```
-#ENTRYPOINT ["docker-entrypoint.sh"]
+mkdir backend/src
+mkdir frontend/src
 ```
->luego entra para ejecutar la siguiente linea de comando
+>luego ejecuta el siguiente comando
 ```
-composer create-project --prefer-dist laravel/laravel . 
-
-o
-
-
+docker compose up --build
+docker compose ps
+docker compose start
+docker compose stop
 ```
