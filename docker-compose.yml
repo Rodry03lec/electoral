@@ -22,6 +22,8 @@ services:
       - "4200:4200"
     depends_on:
       - app_backend
+    command: tail -f /dev/null
+#    command: sleep infinity
   db:
     image: postgres:15
     container_name: laravel_pg
