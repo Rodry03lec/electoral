@@ -17,12 +17,12 @@ services:
       - db
   app_frontend:
     build:
-      context: ./frontend
+      context: ./frontend/nodejs
       dockerfile: Dockerfile
     container_name: frontend_app
     working_dir: /app
     volumes:
-      - ./frontend:/app
+      - ./frontend/src:/app
       - /app/node_modules
     ports:
       - "4200:4200"
